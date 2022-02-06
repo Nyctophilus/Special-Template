@@ -2,6 +2,7 @@
 :root {
   --main-clr: #ff9800;
   --shades-clr: #ff980070;
+  --light-text: white;
   --trans: 0.5s;
 }
 * {
@@ -49,9 +50,11 @@ a {
   background-size: cover;
   min-height: 100vh;
 }
+
 .landing-page::after {
   content: "";
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--shades-clr);
+  opacity: 0.25;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -64,7 +67,7 @@ header {
   justify-content: space-between;
   width: 50%;
   margin: auto;
-  color: white;
+  color: var(--light-text);
   z-index: 1;
 }
 header ul {
@@ -73,7 +76,7 @@ header ul {
 }
 
 header a {
-  color: white;
+  color: var(--light-text);
   font-size: 17px;
 }
 header h3 {
@@ -83,7 +86,7 @@ header h3 {
 .landing-content {
   position: absolute;
   top: 50%;
-  color: white;
+  color: var(--light-text);
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -126,7 +129,7 @@ header h3 {
   left: -147px;
   top: -7px;
   background-color: var(--main-clr);
-  color: white;
+  color: var(--light-text);
   width: 130px;
   font-size: 20px;
   padding: 2px 0;
@@ -149,7 +152,7 @@ header h3 {
 .gear {
   position: absolute;
   padding: 8px;
-  background-color: white;
+  background-color: var(--light-text);
   width: fit-content;
   left: 0;
   top: 20px;
@@ -186,11 +189,13 @@ header h3 {
   transition: var(--trans);
   width: 15em;
   height: 100vh;
-  background-color: white;
+  background-color: var(--light-text);
   position: absolute;
   left: -15em;
   top: -76px;
   padding: 20px;
+  box-shadow: inset 20px 20px 60px #ffffff,
+    inset -20px -20px 60px #bebebe;
 }
 .gear-panel.open {
   left: 0;
@@ -216,7 +221,7 @@ header h3 {
   cursor: pointer;
 }
 .gear-panel .box span:first-child {
-  background-color: var(--main-clr);
+  background-color: #ff9800;
 }
 .gear-panel .box span:nth-child(2) {
   background-color: #4caf50;
@@ -231,25 +236,25 @@ header h3 {
   background-color: #673ab7;
 }
 .gear-panel .box button {
-  color: white;
+  color: var(--light-text);
   font-weight: bold;
   border: none;
   border-radius: 6px;
   padding: 0 10px;
   cursor: pointer;
+  background-color: var(--shades-clr);
+}
+.gear-panel .box button.active {
+  background-color: var(--main-clr);
 }
 .gear-panel .box button:first-child {
   margin-right: 10px;
-  background-color: var(--main-clr);
-}
-.gear-panel .box button:nth-child(2) {
-  background-color: var(--shades-clr);
 }
 
 .gear-panel .reset {
   width: 100%;
   background-color: #f44336;
-  color: white;
+  color: var(--light-text);
   padding: 10px;
   text-align: center;
   font-weight: bold;

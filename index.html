@@ -23,25 +23,61 @@
   <body>
     <!-- landing page -->
     <div class="landing-page">
-      <header>
-        <h3>Special Design</h3>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#timeline">Timeline</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-        </ul>
-      </header>
+      <div class="container">
+        <header>
+          <h3>Special Design</h3>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#features">Features</a></li>
+            <li>
+              <a href="#testimonials">Testimonials</a>
+            </li>
+          </ul>
 
-      <div class="landing-content">
-        <h3>We Are <strong>Creative</strong> Agency</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Repellendus odit nihil ullam nesciunt quidem
-          iste
-        </p>
+          <div class="hamburger">
+            <span style="--i: 0; --x: -1; --y: 0">
+              <a href="#about"
+                ><ion-icon
+                  name="camera-outline"
+                ></ion-icon></a
+            ></span>
+            <span style="--i: 1; --x: 1; --y: 0">
+              <a href="#skills"
+                ><ion-icon name="diamond-outline"></ion-icon
+              ></a>
+            </span>
+            <span style="--i: 2; --x: 0; --y: -1">
+              <a href="#gallery"
+                ><ion-icon
+                  name="airplane-outline"
+                ></ion-icon></a
+            ></span>
+            <span style="--i: 3; --x: 0; --y: 1">
+              <a href="#timeline"
+                ><ion-icon
+                  name="barbell-outline"
+                ></ion-icon></a
+            ></span>
+            <span style="--i: 6; --x: 0; --y: 0"
+              ><a href="#testimonials"
+                ><ion-icon
+                  name="headset-outline"
+                ></ion-icon></a
+            ></span>
+          </div>
+        </header>
+
+        <div class="landing-content">
+          <h3>We Are <strong>Creative</strong> Agency</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Repellendus odit nihil ullam
+            nesciunt quidem iste
+          </p>
+        </div>
       </div>
 
       <div class="bullets">
@@ -82,16 +118,14 @@
           <div class="box">
             Random Backgrounds
             <div>
-              <button class="active">Yes</button
-              ><button>No</button>
+              <button>Yes</button><button>No</button>
             </div>
           </div>
 
           <div class="box">
             Show Bullets
             <div>
-              <button class="active">Yes</button
-              ><button>No</button>
+              <button>Yes</button><button>No</button>
             </div>
           </div>
 
@@ -104,9 +138,124 @@
         </div>
       </div>
     </div>
+
     <!-- About Section -->
     <main>
-      <div id="about"></div>
+      <section id="about">
+        <div class="container">
+          <div class="text">
+            <h3 class="headers">About Us</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Atque dolore mollitia saepe
+              veritatis quod ipsam odio distinctio laborum
+              adipisci itaque cum, maiores magnam
+              exercitationem quae vitae velit, corrupti
+              minima fugiat?
+            </p>
+          </div>
+
+          <div class="img">
+            <img
+              src="images/about.jpg"
+              alt="about-us image"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="container">
+          <h3 class="headers">Our Skills</h3>
+
+          <div class="skill">
+            <div>
+              <span>HTML</span>
+              <span data-progress="80%"></span>
+            </div>
+
+            <div>
+              <span>CSS</span>
+              <span data-progress="70%"></span>
+            </div>
+
+            <div>
+              <span>JavaScript</span>
+              <span data-progress="65%"></span>
+            </div>
+
+            <div>
+              <span>Pugjs</span>
+              <span data-progress="45%"></span>
+            </div>
+
+            <div>
+              <span>SASS</span>
+              <span data-progress="30%"></span>
+            </div>
+
+            <div>
+              <span>BootStrap</span>
+              <span data-progress="55%"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <div class="container">
+          <h3 class="headers">Our Gallery</h3>
+
+          <div>
+            <img
+              src="images/gallery-img1.jpg"
+              alt="gallery image one"
+            />
+
+            <img
+              src="images/gallery-img2.jpg"
+              alt="gallery image two"
+            />
+
+            <img src="images/gallery-img3.jpg" />
+
+            <img
+              src="https://lh3.googleusercontent.com/erBVTEvU9shxcXUe8n3pSbAa5WYlEcDdZShUTEu--ASthTOptzeG4qW1ZFSTw1O02ErHoyBm0WqEAi7TDkYeCBobA743N0ggNRPlZJvQMPLccxdmLIxtxnzRsfpGThOa8-4qBPrF0p7an-6mqElsSlTsM7gGzFqaeOCZQboy3YWrFtSLuTvRXkMq1kB9iFpVD08iizRiBstHsunxG2iG0RYKJ_Tp235uQmUZb4bIJpSbl9NW0ZV7GIWS9YLnSBb6r7_JMzU54Yu8YeUTQdnw72bDfm-P3egAuTUOwBeN8arm45szxxeV3wF4HtL-Gct112GvXfPzht_p24MSLWc0qQF9TnRQVX36utj6A7Tj6SsCssxbfH9B8ctPSE0UtJZfNQK5Cc-b-y56rNAL7-n2EDPSMWP4cwdcZojC6WX2J1cYImpxA9bkfllhUfFRZURK2uKHB1zRoWK2SCEb4AJGqzNh1uVSJreMZfS07DohT6wSN511ld75jfQr3QhtT8RivZWfchS2A4xR6NTF1mD4BQ-qY6WBwSUVRrFuXeVQvVR7b5gX7ov0IGYrGJxQdUliH_XxSi1CKwT4M6eaDCqYPvnj_wqfu-dEMJWsWnssVgFw2z0XfErtun_16Tpw4LFRMq0vtV65a1axmECt4SC55RlSICLn7Yr-32LOjmhF2lQpsQh-qK5VepL7Vnx5baIvC7SCF3K2s-a0LcoWDc75Vffd=w1250-h937-no?authuser=0"
+            />
+
+            <img
+              src="images/gallery-img4.jpg"
+              alt="gallery image five"
+            />
+
+            <img
+              src="https://lh3.googleusercontent.com/pw/AM-JKLVRG35B75R_BQCnYGVFRs8UmgaHTMYGto6MTJQGMpc_pK1kJsjl6NooznlPVlSTzUsEuo8h7EslX8vORKAAgPKO4jIBvDZ1zMKfVwnvgtnXOmF60IT_D0AYx7ZTM2sxVR8d5ZzfM0DanWlSg9Ow65yw=w703-h937-no?authuser=0"
+            />
+
+            <img
+              src="images/gallery-img5.jpg"
+              alt="gallery image seven"
+            />
+
+            <img
+              src="images/gallery-img6.jpg"
+              alt="gallery image eight"
+            />
+
+            <div class="img">
+              <img
+                src="images/gallery-img8.jpg"
+                alt="gallery image nine"
+              />
+            </div>
+
+            <img
+              src="images/gallery-img7.jpg"
+              alt="gallery image ten"
+            />
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- js scripts -->
@@ -118,6 +267,7 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+
     <script src="js/main.js"></script>
   </body>
 </html>

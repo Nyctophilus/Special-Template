@@ -72,11 +72,12 @@ gearBox.onclick = () => {
 let gbInterv;
 function randoBG() {
   gbInterv = setInterval(() => {
-    landingPage.style.backgroundImage = `url(images/${
+    landingPage.style.backgroundImage =
+      'url("images/' +
       imgsArray[
         Math.trunc(Math.random() * imgsArray.length)
-      ]
-    })`;
+      ] +
+      '")';
   }, 10000);
 }
 console.log(

@@ -72,17 +72,14 @@ gearBox.onclick = () => {
 let gbInterv;
 function randoBG() {
   gbInterv = setInterval(() => {
-    landingPage.style.backgroundImage =
-      'url("images/' +
+    landingPage.style.backgroundImage = `url("images/${
       imgsArray[
         Math.trunc(Math.random() * imgsArray.length)
-      ] +
-      '")';
+      ]
+    }")`;
   }, 10000);
 }
-console.log(
-  imgsArray[Math.trunc(Math.random() * imgsArray.length)]
-);
+
 // _______________________________________________________________________________
 // change main clrs onClick
 let currentClr = "#ff9800";
@@ -159,3 +156,6 @@ window.onload = () => {
     ? randoBG()
     : clearInterval(gbInterv);
 };
+//save active btns to storage
+
+// function reset options button == clear localstorage

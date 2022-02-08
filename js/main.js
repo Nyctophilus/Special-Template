@@ -224,6 +224,8 @@ window.onscroll = () => {
   if (window.scrollY >= skillSection.offsetTop - 300) {
     skillScroll();
   }
+
+  timelineDisplay();
 };
 
 function skillScroll() {
@@ -276,3 +278,123 @@ galleryImgs.forEach((img) =>
     }
   })
 );
+
+// TimeLine display on scroll
+function timelineDisplay() {
+  if (
+    window.scrollY >=
+    document.getElementById("timeline").offsetTop - 400
+  ) {
+    // show the line
+    document
+      .querySelector("#timeline .timeline-content")
+      .classList.add("scorlled");
+
+    // show year1
+    document.querySelector(
+      "#timeline .timeline-content .y1"
+    ).style.visibility = "visible";
+
+    // show left1
+    document.querySelector(
+      "#timeline .timeline-content .left1"
+    ).style.visibility = "visible";
+
+    // show right
+    document.querySelector(
+      "#timeline .timeline-content .right"
+    ).style.visibility = "visible";
+
+    // show year2
+    document.querySelector(
+      "#timeline .timeline-content .y2"
+    ).style.visibility = "visible";
+
+    // show left2
+    document.querySelector(
+      "#timeline .timeline-content .left2"
+    ).style.visibility = "visible";
+
+    // show left3
+    document.querySelector(
+      "#timeline .timeline-content .left3"
+    ).style.visibility = "visible";
+  }
+}
+
+// Cotact-us Form Validation
+let userName = document.querySelector('input[name="name"]');
+let userNumber = document.querySelector(
+  'input[name="phone"]'
+);
+let userMail = document.querySelector('input[name="mail"]');
+let userSubject = document.querySelector(
+  'input[name="subject"]'
+);
+let userMsg = document.querySelector(
+  'textarea[name="msg"]'
+);
+
+document.querySelector(".contact form").onsubmit = (e) => {
+  // if (
+  //   !userName.value ||
+  //   !userNumber.value ||
+  //   !userSubject.value ||
+  //   !userMail.value
+  // ) {
+  //   console.log(`empty`);
+  //   e.preventDefault();
+  // }
+  // validaite user name ONLY letters and spaces
+  var nameReg = /^[a-z\s]+$/gi;
+
+  // validaite phone number +20-112-5595-287
+  let phReg = /\+20-\d{3}-\d{4}-\d{3}/g;
+
+  // validaite email asdsadsa@asdsa.com       com|net|org
+  let mailReg = /\w+@\w+\.(com|net|org)/gi;
+
+  // [x] popup for unvalid data
+  // [ ] delete the span on evetlistener vaild data
+  if (
+    !nameReg.test(userName.value) &&
+    !phReg.test(userNumber.value) &&
+    !nameReg.test(userSubject.value) &&
+    !mailReg.test(userMail.value)
+  ) {
+    validatePopup(
+      nameReg.test(userName.value),
+      phReg.test(userNumber.value),
+      mailReg.test(userMail.value),
+      nameReg.test(userSubject.value)
+    );
+  }
+
+  e.preventDefault();
+};
+
+// function to create popup
+let vSpan = document.createElement("span");
+
+function validatePopup(name, ph, mail, subject) {
+  if (!name && userName.value !== "") {
+    vSpan.textContent = "Invalid User name!😔";
+    userName.after(vSpan);
+  }
+
+  if (!ph && userNumber.value !== "") {
+    vSpan.textContent = "Invalid Phone Number!🙄";
+    userNumber.after(vSpan);
+  } else if (ph) userNumber.remove(vSpan);
+
+  if (!mail && userMail.value !== "") {
+    vSpan.textContent = "Invalid E-Mail Format!🙁";
+    userMail.after(vSpan);
+  } else if (mail) userMail.remove(vSpan);
+
+  if (!subject && userSubject.value !== "") {
+    vSpan.textContent =
+      "Please, Write a proper Subject Name😤";
+    userSubject.after(vSpan);
+  } else if (subject) userSubject.remove(vSpan);
+}

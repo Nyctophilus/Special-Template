@@ -1,6 +1,6 @@
 # <a>🌇Special-Template</a>
 
-<h3>Special Design --Practice JS Template<img src="https://raw.githubusercontent.com/aemmadi/aemmadi/master/wave.gif" width="30px" style="max-width: 100%;"></h3>
+<h3>Special Design --Practice JS Template <img src="https://media.giphy.com/media/ZZI0OS9dSMXKTcqA8p/giphy.gif" width="30px" style="max-width: 100%;"></h3>
 
 # Special Design
 
@@ -38,7 +38,11 @@ TODO:
 - [x] Footer
 - [x] Contact us Form function.js
 - [x] popup for unvalid data
-- [ ] delete the span on evetlistener vaild data
+- [ ] delete the popup span on evetlistener vaild data
+- [ ] preview image
+- [ ] Stats image
+- [ ] level up SEO
+- [ ] level up Best Practices
 
 <br>
 <br>

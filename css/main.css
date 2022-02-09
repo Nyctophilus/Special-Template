@@ -735,14 +735,21 @@ header a {
   z-index: -1;
 }
 #testimonials::before {
-  background-image: url("/images/blob.svg");
+  background-image: url("../images/blob.svg");
   left: 0;
 }
 #testimonials::after {
   right: 0;
-  background-image: url(/images/Moon.svg);
+  background-image: url(../images/Moon.svg);
 }
-
+@media (max-width: 1199px) {
+  #testimonials::before {
+    width: 100%;
+  }
+  #testimonials::after {
+    content: none;
+  }
+}
 #testimonials h3 {
   color: var(--light-text);
 }

@@ -40,6 +40,11 @@ first Dev session:      07:24 AM    ~   03:03 PM        ~ 07h 39m
 </details>
 <br>
 <br>
+<details>
+    <summary>Website UPDATED Stats Report</summary>
+    <img src="UPDATED Live Stats report.jpg"/>
+</details>
+<br>
 <br>
 
 TODO:

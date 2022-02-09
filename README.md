@@ -1,6 +1,19 @@
-# <a>🌇Special-Template</a>
+# <a>🏛️Special-Template</a>
 
 <h3>Special Design --Practice JS Template <img src="https://media.giphy.com/media/ZZI0OS9dSMXKTcqA8p/giphy.gif" width="30px" style="max-width: 100%;"></h3>
+
+![Preview page](head.jpg)
+
+<menu>
+  <li>A Practice Design Template, Mainly Focused on practical Javascript.</li>
+  <li>LocalStorage To Save User Settings, and take defaults when reload.</li>
+  <li>Randomly Change Background images at time intervals.</li>
+  <li>Custom Setting Panel on Sticky Position.</li>
+  <li>Changes on Widths|Display On Scroll.</li>
+  <li>Popup menu on image click.</li>
+  <li>Animated SVG</li>
+  <li>Grid System</li>
+</menu>
 
 # Special Design
 
@@ -9,20 +22,22 @@
 first Dev session:      06:20 AM    ~   08:44 AM        ~ 02h 24m
 
 2nd Day: 7/2/2022
-first Dev session:     05:11 AM    ~   12:34 PM        ~ 07h 23m
+first Dev session:     08:11 AM    ~   12:34 PM        ~ 04h 23m
 
 3nd Day: 8/2/2022
 first Dev session:      07:24 AM    ~   03:03 PM        ~ 07h 39m
 </pre>
 
-<pre><q>Challenge Completed in   19h 26m</q></pre>
+<pre><q>Challenge Completed in   16h 26m</q></pre>
 
-![Preview page](preview.jpg)
 <br>
 <br>
+<br>
 
-<h3> Website Stats Report</h3>
-<img src="Live Stats report.jpg"/>
+<details>
+    <summary>Website Stats Report</summary>
+    <img src="Live Stats report.jpg"/>
+</details>
 <br>
 <br>
 <br>
@@ -38,16 +53,20 @@ TODO:
 - [x] Footer
 - [x] Contact us Form function.js
 - [x] popup for unvalid data
-- [ ] delete the popup span on evetlistener vaild data
-- [ ] preview image
-- [ ] Stats image
-- [ ] level up SEO
-- [ ] level up Best Practices
+- [x] delete the popup span on evetlistener vaild data 🎉🎉🎉
+- [x] preview image
+- [x] Stats image
+- [x] if empty Storage => set buttons in gearBox to defualt actives
+- [x] level up Accessibility
+- [x] level up SEO
+- [x] level up Best Practices
+- [x] check responsivity of the lower part of the webpage
+- [x] FIXME: the condition to let the backgrounds chnage randomly
 
 <br>
 <br>
 <br>
-🍬 Please Leave a :star: &nbsp;if you like it, Please!🤩
+🍬 Leave a :star:&nbsp;if you like it, Please!🤩
 
 <br>
 

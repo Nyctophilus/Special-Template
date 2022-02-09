@@ -12,52 +12,28 @@ let gearIcon = document.querySelector(".gear ion-icon");
 let gearPanel = document.querySelector(".gear-panel");
 let landingPage = document.querySelector(".landing-page");
 let imgsArray = [
-  "bg1.jpg",
-  "bg2.jpg",
-  "bg3.jpg",
-  "bg4.jpg",
-  "bg5.jpg",
+  "bg1.webp",
+  "bg2.webp",
+  "bg3.webp",
+  "bg4.webp",
+  "bg5.webp",
 ];
 
-// buttons 2 rando bg button
-let bgSettings;
-butn2.forEach((b) => {
-  b.addEventListener("click", (e) => {
-    butn2.forEach((b2) => b2.classList.remove("active"));
+window.onload = () => {
+  // keep the storage values on windows reload
+  if (localStorage.length > 0) {
+    setColors();
 
-    e.currentTarget.classList.add("active");
+    saveSetBtns2();
 
-    if (b.textContent === "Yes") randoBG();
-    else clearInterval(gbInterv);
-
-    bgSettings = b.textContent;
-    saveBgsettings();
-  });
-});
-
-// buttons 3 bullets show
-let bulletSettings;
-butn3.forEach((b) => {
-  b.addEventListener("click", (e) => {
-    butn3.forEach((b) => b.classList.remove("active"));
-
-    e.currentTarget.classList.add("active");
-
-    // set the display of bullets
-    if (b.textContent === "No") {
-      document.querySelector(".bullets").style.display =
-        "none";
-      bulletSettings = `none`;
-    } else {
-      document.querySelector(".bullets").style.display =
-        "initial";
-      bulletSettings = `initial`;
-    }
-
-    saveBulletsDisplay();
-  });
-});
-
+    saveSetBtns3();
+  }
+  // Handle when the storage is empty
+  else {
+    butn2[1].classList.add("active"),
+      butn3[0].classList.add("active");
+  }
+};
 // _______________________________________________________________________________
 // gearBox Panel  Open functionality
 gearBox.onclick = () => {
@@ -68,17 +44,8 @@ gearBox.onclick = () => {
   gearPanel.classList.toggle("open");
 };
 
-// interval bg change
-let gbInterv;
-function randoBG() {
-  gbInterv = setInterval(() => {
-    landingPage.style.backgroundImage = `url("images/${
-      imgsArray[
-        Math.trunc(Math.random() * imgsArray.length)
-      ]
-    }")`;
-  }, 10000);
-}
+// _______________________________________________________________________________
+// handle defaults when storage is empty
 
 // _______________________________________________________________________________
 // change main clrs onClick
@@ -108,6 +75,62 @@ function setColors() {
     `--shades-clr`,
     `${localStorage.getItem("shades-color")}`
   );
+}
+
+// _______________________________________________________________________________
+// buttons 2 rando bg button
+let bgSettings;
+butn2.forEach((b) => {
+  b.addEventListener("click", (e) => {
+    butn2.forEach((b2) => b2.classList.remove("active"));
+
+    e.currentTarget.classList.add("active");
+
+    // FIXME: the condition to let the backgrounds chnage randomly
+    // if yes:active go randoBG ? not >> clear
+    if (butn2[0].classList.contains("active")) randoBG();
+    else clearInterval(gbInterv);
+
+    bgSettings = b.textContent;
+    saveBgsettings();
+  });
+});
+
+// _______________________________________________________________________________
+// buttons 3 bullets show
+let bulletSettings;
+butn3.forEach((b) => {
+  b.addEventListener("click", (e) => {
+    butn3.forEach((b) => b.classList.remove("active"));
+
+    e.currentTarget.classList.add("active");
+
+    // set the display of bullets
+    if (b.textContent === "No") {
+      document.querySelector(".bullets").style.display =
+        "none";
+      bulletSettings = `none`;
+    } else {
+      document.querySelector(".bullets").style.display =
+        "initial";
+      bulletSettings = `initial`;
+    }
+
+    saveBulletsDisplay();
+  });
+});
+
+// _______________________________________________________________________________
+// interval bg change
+let gbInterv;
+function randoBG() {
+  gbInterv = setInterval(() => {
+    landingPage.style.backgroundImage = `url("images/${
+      imgsArray[
+        Math.trunc(Math.random() * imgsArray.length)
+      ]
+    }")`;
+  }, 10000);
 }
 
 // _______________________________________________________________________________
@@ -183,16 +206,6 @@ function saveSetBtns3() {
 }
 
 // _______________________________________________________________________________
-// keep the storage values on windows reload
-window.onload = () => {
-  if (localStorage.length > 0) {
-    setColors();
-
-    saveSetBtns2();
-
-    saveSetBtns3();
-  }
-};
 
 // function reset options button == clear localstorage
 let reset = document.querySelector(".reset");
@@ -356,10 +369,11 @@ document.querySelector(".contact form").onsubmit = (e) => {
 
   // [x] popup for unvalid data
   // [ ] delete the span on evetlistener vaild data
+
   if (
-    !nameReg.test(userName.value) &&
-    !phReg.test(userNumber.value) &&
-    !nameReg.test(userSubject.value) &&
+    !nameReg.test(userName.value) ||
+    !phReg.test(userNumber.value) ||
+    !nameReg.test(userSubject.value) ||
     !mailReg.test(userMail.value)
   ) {
     validatePopup(
@@ -369,6 +383,13 @@ document.querySelector(".contact form").onsubmit = (e) => {
       nameReg.test(userSubject.value)
     );
   }
+
+  deletePopup(
+    nameReg.test(userName.value),
+    phReg.test(userNumber.value),
+    mailReg.test(userMail.value),
+    nameReg.test(userSubject.value)
+  );
 
   e.preventDefault();
 };
@@ -385,16 +406,51 @@ function validatePopup(name, ph, mail, subject) {
   if (!ph && userNumber.value !== "") {
     vSpan.textContent = "Invalid Phone Number!🙄";
     userNumber.after(vSpan);
-  } else if (ph) userNumber.remove(vSpan);
+  }
 
   if (!mail && userMail.value !== "") {
     vSpan.textContent = "Invalid E-Mail Format!🙁";
     userMail.after(vSpan);
-  } else if (mail) userMail.remove(vSpan);
+  }
 
   if (!subject && userSubject.value !== "") {
     vSpan.textContent =
       "Please, Write a proper Subject Name😤";
     userSubject.after(vSpan);
-  } else if (subject) userSubject.remove(vSpan);
+  }
+}
+
+// delete popup if correct data
+function deletePopup(name, ph, mail, subject) {
+  if (name) {
+    let span = document.querySelector(
+      'input[name="name"] + span'
+    );
+
+    if (span) span.remove();
+  }
+
+  if (ph) {
+    let span = document.querySelector(
+      'input[name="phone"] + span'
+    );
+
+    if (span) span.remove();
+  }
+
+  if (mail) {
+    let span = document.querySelector(
+      'input[name="mail"] + span'
+    );
+
+    if (span) span.remove();
+  }
+
+  if (subject) {
+    let span = document.querySelector(
+      'input[name="subject"] + span'
+    );
+
+    if (span) span.remove();
+  }
 }

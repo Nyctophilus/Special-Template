@@ -43,22 +43,29 @@ h3.headers {
 
 /* container */
 
+/* Grid System */
+@media (min-width: 576px) {
+  /* Small Devices => Landscape Phones */
+  .container {
+    max-width: 540px;
+  }
+}
 @media (min-width: 768px) {
+  /* Medium Devices => Tablets */
   .container {
-    width: 750px;
-    margin: auto;
+    max-width: 720px;
   }
 }
-
 @media (min-width: 992px) {
+  /* Desktops */
   .container {
-    width: 970px;
+    max-width: 960px;
   }
 }
-
 @media (min-width: 1200px) {
+  /* Large Screens */
   .container {
-    width: 1170px;
+    max-width: 1140px;
   }
 }
 .container {
@@ -79,7 +86,7 @@ a {
 
 /* Header */
 .landing-page {
-  background-image: url(../images/bg1.jpg);
+  background-image: url(../images/bg1.webp);
   background-size: cover;
   min-height: 100vh;
 }
@@ -103,6 +110,7 @@ header {
 header ul {
   gap: 10px;
   align-items: center;
+  z-index: 2;
 }
 @media (max-width: 991px) {
   header ul {
@@ -434,6 +442,7 @@ header a {
 
 #skills .skill div span:nth-child(1) {
   width: 150px;
+  font-weight: bold;
 }
 #skills .skill div span:nth-child(2) {
   width: 0;
@@ -740,9 +749,18 @@ header a {
 
 #testimonials .te-boxes {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 15px;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(350px, 1fr)
+  );
+  grid-gap: 15px;
   z-index: 5;
+}
+@media (max-width: 1199px) {
+  #testimonials .te-boxes {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
 #testimonials .test-box {
   background-color: var(--light-text);
@@ -776,6 +794,12 @@ header a {
   display: flex;
   justify-content: center;
   gap: 50px;
+}
+@media (max-width: 991px) {
+  .contact form {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .contact form div {
   display: flex;

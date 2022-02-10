@@ -8,6 +8,7 @@
   <li>A Practice Design Template, Mainly Focused on practical Javascript.</li>
   <li>LocalStorage To Save User Settings, and take defaults when reload.</li>
   <li>Randomly Change Background images at time intervals.</li>
+  <li>Validation System of Form Fully functioning.</li>
   <li>Custom Setting Panel on Sticky Position.</li>
   <li>Changes on Widths|Display On Scroll.</li>
   <li>Popup menu on image click.</li>

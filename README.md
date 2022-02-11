@@ -69,6 +69,7 @@ TODO:
 - [x] check responsivity of the lower part of the webpage
 - FIXDONE: the condition to let the backgrounds chnage randomly
 - FIXDONE: Fix Popup image size
+- FIXDONE: disable selecting text on bullets
 
   <br>
   <br>

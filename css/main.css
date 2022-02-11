@@ -181,6 +181,7 @@ header a {
   font-size: 20px;
   padding: 2px 0;
   text-align: center;
+  user-select: none;
 }
 .bullets span div::after {
   content: "";

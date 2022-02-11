@@ -67,12 +67,13 @@ TODO:
 - [x] level up SEO
 - [x] level up Best Practices
 - [x] check responsivity of the lower part of the webpage
-- [x] FIXME: the condition to let the backgrounds chnage randomly
+- FIXDONE: the condition to let the backgrounds chnage randomly
+- FIXDONE: Fix Popup image size
 
-<br>
-<br>
-<br>
-🍬 Leave a :star:&nbsp;if you like it, Please!🤩
+  <br>
+  <br>
+  <br>
+  🍬 Leave a :star:&nbsp;if you like it, Please!🤩
 
 <br>
 
